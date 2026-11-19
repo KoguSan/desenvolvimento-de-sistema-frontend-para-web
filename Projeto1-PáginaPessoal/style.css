@@ -1,0 +1,527 @@
+/* =========================
+   Configurações gerais
+   ========================= */
+:root {
+    --fundo: #f7f7f4;
+    --superficie: #ffffff;
+    --texto: #252a32;
+    --texto-suave: #606873;
+    --destaque: #587c78;
+    --destaque-escuro: #365c58;
+    --borda: #e2e6e2;
+    --sombra: 0 12px 32px rgba(38, 54, 50, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--destaque-escuro);
+}
+
+a:focus-visible {
+    outline: 3px solid #d49b45;
+    outline-offset: 4px;
+}
+
+/* =========================
+   Cabeçalho e navegação
+   ========================= */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-conteudo {
+    width: min(1100px, 90%);
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.marca {
+    color: var(--texto);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.marca span {
+    color: var(--destaque);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--texto-suave);
+    font-size: 0.93rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background: #edf2ef;
+    color: var(--destaque-escuro);
+}
+
+/* =========================
+   Conteúdo e apresentação
+   ========================= */
+main {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.apresentacao {
+    min-height: 460px;
+    padding: 72px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.8fr);
+    align-items: center;
+    gap: 56px;
+}
+
+.sobretitulo {
+    margin: 0 0 8px;
+    color: var(--destaque-escuro);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.apresentacao h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.apresentacao h1 span {
+    color: var(--destaque-escuro);
+}
+
+.apresentacao h2 {
+    margin: 0 0 18px;
+    color: var(--texto-suave);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 500;
+}
+
+.apresentacao-texto > p:not(.sobretitulo) {
+    max-width: 650px;
+    color: var(--texto-suave);
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 18px;
+    border: 1px solid var(--destaque-escuro);
+    border-radius: 9px;
+    background: var(--destaque-escuro);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+    background: #294944;
+    transform: translateY(-2px);
+}
+
+.cartao-destaque {
+    min-height: 270px;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #dce6e0;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #e7efea, #f3eee6);
+    box-shadow: var(--sombra);
+}
+
+.icone-codigo {
+    color: var(--destaque-escuro);
+    font-family: monospace;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.cartao-legenda {
+    max-width: 230px;
+    margin: 18px 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.etiquetas span {
+    padding: 4px 10px;
+    border: 1px solid #c8d8cf;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--destaque-escuro);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+/* =========================
+   Seções e cartões
+   ========================= */
+.secao {
+    margin: 20px 0 58px;
+    scroll-margin-top: 100px;
+}
+
+.secao > h2 {
+    margin: 0 0 22px;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    letter-spacing: -0.025em;
+}
+
+.cartao {
+    padding: 26px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--superficie);
+    box-shadow: var(--sombra);
+}
+
+.texto p:first-child {
+    margin-top: 0;
+}
+
+.texto p:last-child {
+    margin-bottom: 0;
+}
+
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.grade-cartoes .cartao {
+    height: 100%;
+}
+
+.numero-cartao {
+    color: var(--destaque);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.cartao h3 {
+    margin: 10px 0;
+    font-size: 1.15rem;
+}
+
+.cartao p {
+    color: var(--texto-suave);
+}
+
+.cartao .status {
+    margin-bottom: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--borda);
+    font-size: 0.9rem;
+}
+
+.lista-objetivos {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.lista-objetivos li {
+    padding: 6px 0 6px 4px;
+}
+
+.lista-objetivos li::marker {
+    color: var(--destaque);
+}
+
+.contato > p {
+    margin-top: 0;
+}
+
+.links-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.links-contato a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: #f8faf8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.links-contato a:hover {
+    border-color: var(--destaque);
+    background: #edf2ef;
+}
+
+/* =========================
+   Rodapé
+   ========================= */
+footer {
+    padding: 26px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid var(--borda);
+    background: #ffffff;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* =========================
+   Responsividade
+   ========================= */
+@media (max-width: 800px) {
+    .cabecalho-conteudo {
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 7px 9px;
+    }
+
+    .apresentacao {
+        min-height: auto;
+        padding: 52px 0;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .cartao-destaque {
+        min-height: 220px;
+    }
+
+    .grade-cartoes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    main,
+    .cabecalho-conteudo {
+        width: 92%;
+    }
+
+    .apresentacao {
+        padding: 38px 0;
+    }
+
+    .apresentacao h1 {
+        font-size: 2.25rem;
+    }
+
+    .cartao,
+    .cartao-destaque {
+        padding: 21px;
+        border-radius: 13px;
+    }
+
+    .secao {
+        margin-bottom: 42px;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ========================================
+   PÁGINA COMPLEMENTAR — MEUS INTERESSES
+   ======================================== */
+
+/* Organiza os blocos de conteúdo */
+.interesse {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e9e6;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(38, 51, 49, 0.07);
+}
+
+/* Ajusta as imagens */
+.interesse img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Espaçamento dos títulos e textos */
+.interesse h2 {
+    margin-top: 0;
+    color: #4f605b;
+}
+
+.interesse h3 {
+    margin-top: 1.5rem;
+    color: #4f605b;
+}
+
+.interesse p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Player de áudio responsivo */
+.interesse audio {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 1rem 0;
+}
+
+/* Links dentro dos textos */
+.interesse a {
+    color: #4f605b;
+    font-weight: bold;
+    text-underline-offset: 4px;
+}
+
+.interesse a:hover {
+    color: #7b6657;
+}
+
+/* Na seção de música, imagem à direita */
+#musica .interesse img {
+    order: 2;
+}
+
+#musica .interesse > div {
+    order: 1;
+}
+
+/* Link para voltar à página inicial */
+main > p:last-child {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+main > p:last-child a {
+    display: inline-block;
+    padding: 0.8rem 1.3rem;
+    color: #ffffff;
+    background-color: #6f7f7a;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+main > p:last-child a:hover {
+    background-color: #4f605b;
+}
+
+/* Adaptação para celulares e telas menores */
+@media (max-width: 700px) {
+    .interesse {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .interesse img {
+        max-height: 260px;
+    }
+
+    #musica .interesse img,
+    #musica .interesse > div {
+        order: initial;
+    }
+
+    .interesse audio {
+        max-width: 100%;
+    }
+}
